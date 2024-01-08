@@ -19,9 +19,7 @@ mongo_version="100.9.4"
 echo "-----> Downloading and installing MongoDB version ${mongo_version}..."
 [[ $STACK = "heroku-22" ]] && os_id="amazon"
 
-file_name="mongodb-linux-x86_64-${os_id}-${mongo_version}.tgz"
-folder_name=`echo "$file_name" | sed 's/\.tgz$//'`
-download_url="https://fastdl.mongodb.org/linux/${file_name}"
+download_url="https://fastdl.mongodb.org/tools/db/mongodb-database-tools-amazon2-x86_64-100.9.4.tgz"
 curl $download_url -s -o - | tar xzf - -C /tmp
 
 # Move MongoDB binaries into the app directory
