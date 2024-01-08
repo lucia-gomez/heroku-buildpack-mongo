@@ -17,9 +17,9 @@ warnings=$(mktemp)
 # Install MongoDB 4.0 to use mongo commands
 mongo_version="100.9.4"
 echo "-----> Downloading and installing MongoDB version ${mongo_version}..."
-[[ $STACK = "heroku-22" ]] && os_id="amazon2023"
+[[ $STACK = "heroku-22" ]] && os_id="amazon"
 
-file_name="mongodb-database-tools-amazon2023-x86_64-${mongo_version}.tgz"
+file_name="mongodb-database-tools-amazon-x86_64-${mongo_version}.tgz"
 folder_name=`echo "$file_name" | sed 's/\.tgz$//'`
 download_url="https://fastdl.mongodb.org/tools/db/${file_name}"
 curl $download_url -s -o - | tar xzf - -C /tmp
